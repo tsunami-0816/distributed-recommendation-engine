@@ -1,0 +1,112 @@
+server:
+  port: 8084
+  # 开启虚拟线程（Spring Boot 3.2 + Java 17，架构文档 M01-T01）
+  threads:
+    virtual:
+      enabled: true
+
+spring:
+  application:
+    name: recommendation-engine
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    default-property-inclusion: non_null
+
+# ===== 推荐引擎配置（对应 RecommendProperties） =====
+recommend:
+  recall:
+    min-candidates-per-channel: 100
+    max-candidates: 300
+    min-candidates: 200
+    parallel-timeout-ms: 50
+  rank:
+    default-page-size: 20
+    max-page-size: 50
+    total-budget-ms: 50
+    longtail-weight-multiplier: 1.1
+    category-diversify-max-attempts: 3
+  cache:
+    # 分层 TTL（架构文档 6.5 节）
+    high-frequency-ttl: 10       # 高频用户 10s
+    normal-ttl: 60                # 普通用户 60s
+    fallback-ttl: 120             # 兜底 120s
+    ttl-random-offset: 10         # 随机偏移 ±10s 防雪崩
+    high-frequency-threshold: 10  # 近 5 分钟访问 > 10 次为高频
+    high-frequency-window-seconds: 300
+  model-inference:
+    grpc-address: localhost:50051
+    deepfm-timeout-ms: 80         # DeepFM 超时（架构文档 P1-06）
+    xgboost-timeout-ms: 20        # XGBoost 超时
+    active-model: deepfm_v1
+    degrade-chain: deepfm,xgboost,rule
+    predict-ttl-seconds: 5
+  ab:
+    hash-algorithm: murmur3_32
+    hash-seed: 0x9747b28c
+    default-group: control
+
+# ===== Resilience4j 限流熔断（架构文档 M01-T06 / 附录 B） =====
+resilience4j:
+  ratelimiter:
+    instances:
+      recommend-api:
+        limit-for-period: 1000
+        limit-refresh-period: 1s
+        timeout-duration: 0
+      behavior-api:
+        limit-for-period: 2000
+        limit-refresh-period: 1s
+        timeout-duration: 0
+      search-api:
+        limit-for-period: 500
+        limit-refresh-period: 1s
+        timeout-duration: 0
+  circuitbreaker:
+    instances:
+      model-inference:
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 5
+      elasticsearch:
+        failure-rate-threshold: 60
+        wait-duration-in-open-state: 30s
+
+# ===== 管理后台鉴权配置（修复Bug-004） =====
+admin:
+  api-key: admin-dev-key
+
+# ===== Spring Boot Actuator（健康检查/指标） =====
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: recommendation-engine
+    # 修复Bug-005：启用 HTTP 请求延迟百分位数统计，用于仪表盘 P99 计算
+    distribution:
+      percentiles:
+        http.server.requests: 0.5,0.9,0.95,0.99
+
+# ===== SpringDoc OpenAPI（接口文档） =====
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+# ===== 日志级别 =====
+logging:
+  level:
+    root: INFO
+    com.example.recommend: DEBUG
+    org.springframework.web: INFO
+    io.github.resilience4j: INFO

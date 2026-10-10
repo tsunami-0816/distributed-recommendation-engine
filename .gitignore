@@ -1,0 +1,29 @@
+# === 后端 (Spring Boot / Maven) ===
+apps/recommendation-engine/logs/
+apps/recommendation-engine/target/
+*.log
+
+# === 前端 (Vue / Vite / Node) ===
+apps/recommend-admin/node_modules/
+apps/recommend-admin/dist/
+apps/recommend-admin/.env.local
+apps/recommend-admin/.env.*.local
+
+# === IDE ===
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# === OS ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === 临时文件 ===
+*.tmp
+*.temp
+*.bak
+*.swp
+*~

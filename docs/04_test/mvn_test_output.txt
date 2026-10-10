@@ -1,0 +1,147 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.example:recommendation-engine >------------------
+[INFO] Building recommendation-engine 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ recommendation-engine ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ recommendation-engine ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ recommendation-engine ---
+[INFO] skip non existing resourceDirectory D:\lg\project\distributed-recommendation-engine\recommendation-engine\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ recommendation-engine ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ recommendation-engine ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.recommend.config.AuthInterceptorTest
+mvn : OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath h
+as been appended
+所在位置 行:1 字符: 78
++ ... -recommendation-engine\recommendation-engine" ; mvn test 2>&1 | Out-F ...
++                                                     ~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OpenJDK 64-Bit ...s been appended:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+01:40:08.981 [main] WARN com.example.recommend.config.AuthInterceptor -- �����̨���� API Key ��ƥ��: uri=null, providedKey=wrong-key
+01:40:09.233 [main] WARN com.example.recommend.config.AuthInterceptor -- �����̨����δЯ�� X-API-Key: uri=null, method=GET
+01:40:09.268 [main] WARN com.example.recommend.config.AuthInterceptor -- �����̨����δЯ�� X-API-Key: uri=null, method=DELETE
+01:40:09.307 [main] WARN com.example.recommend.config.AuthInterceptor -- �����̨����δЯ�� X-API-Key: uri=null, method=GET
+01:40:09.449 [main] WARN com.example.recommend.config.AuthInterceptor -- �����̨����δЯ�� X-API-Key: uri=null, method=PUT
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.933 s -- in com.example.recommend.config.AuthInterceptorTest
+[INFO] Running com.example.recommend.controller.HotItemsControllerTest
+01:40:10.304 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.recommend.controller.HotItemsControllerTest]: HotItemsControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:40:11.407 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.recommend.RecommendationEngineApplication for test class com.example.recommend.controller.HotItemsControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-10-04 01:40:14.192 [background-preinit] INFO  o.h.validator.internal.util.Version [] - HV000001: Hibernate Validator 8.0.1.Final
+2026-10-04 01:40:14.393 [main] INFO  c.e.r.c.HotItemsControllerTest [] - Starting HotItemsControllerTest using Java 17.0.19 with PID 20996 (started by 25399 in D:\lg\project\distributed-recommendation-engine\recommendation-engine)
+2026-10-04 01:40:14.397 [main] DEBUG c.e.r.c.HotItemsControllerTest [] - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-10-04 01:40:14.400 [main] INFO  c.e.r.c.HotItemsControllerTest [] - The following 1 profile is active: "dev"
+2026-10-04 01:40:24.282 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [] - Tomcat initialized with port 0 (http)
+2026-10-04 01:40:24.337 [main] INFO  o.a.coyote.http11.Http11NioProtocol [] - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-10-04 01:40:24.348 [main] INFO  o.a.catalina.core.StandardService [] - Starting service [Tomcat]
+2026-10-04 01:40:24.349 [main] INFO  o.a.catalina.core.StandardEngine [] - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-04 01:40:24.933 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [] - Initializing Spring embedded WebApplicationContext
+2026-10-04 01:40:24.934 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [] - Root WebApplicationContext: initialization completed in 10451 ms
+2026-10-04 01:40:25.570 [main] DEBUG c.e.recommend.config.TraceIdFilter [] - Filter 'traceIdFilter' configured for use
+2026-10-04 01:40:31.609 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver [] - Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-10-04 01:40:32.082 [main] INFO  o.a.coyote.http11.Http11NioProtocol [] - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-10-04 01:40:32.195 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [] - Tomcat started on port 60977 (http) with context path ''
+2026-10-04 01:40:32.265 [main] INFO  c.e.r.c.HotItemsControllerTest [] - Started HotItemsControllerTest in 20.134 seconds (process running for 33.332)
+2026-10-04 01:40:32.820 [http-nio-auto-1-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-04 01:40:32.820 [http-nio-auto-1-exec-1] INFO  o.s.web.servlet.DispatcherServlet [] - Initializing Servlet 'dispatcherServlet'
+2026-10-04 01:40:32.825 [http-nio-auto-1-exec-1] INFO  o.s.web.servlet.DispatcherServlet [] - Completed initialization in 3 ms
+2026-10-04 01:40:33.303 [http-nio-auto-1-exec-1] WARN  c.e.r.common.GlobalExceptionHandler [be77177e9ab64316aa7b38330558ffee] - 约束违反: getHotItems.limit: �?小不能小�?1
+2026-10-04 01:40:33.587 [http-nio-auto-1-exec-2] DEBUG c.e.r.controller.HotItemsController [2dac383dac7142bb94ab297a7b20edd8] - 热门物品查询: categoryId=null, limit=20, result=20
+2026-10-04 01:40:33.684 [http-nio-auto-1-exec-3] DEBUG c.e.r.controller.HotItemsController [0d41009f1b564ffb8543215f585dc127] - 热门物品查询: categoryId=null, limit=100, result=100
+2026-10-04 01:40:33.771 [http-nio-auto-1-exec-4] WARN  c.e.r.common.GlobalExceptionHandler [2d7d8b56b4804d45a42199d2138a2678] - 约束违反: getHotItems.limit: �?小不能小�?1
+2026-10-04 01:40:33.810 [http-nio-auto-1-exec-5] DEBUG c.e.r.controller.HotItemsController [c45e16fc7af44b6b980b1287b97b20c4] - 热门物品查询: categoryId=101, limit=10, result=10
+2026-10-04 01:40:33.855 [http-nio-auto-1-exec-6] DEBUG c.e.r.controller.HotItemsController [37412fbd327f4faaadd1ac9c08b1baf2] - 热门物品查询: categoryId=null, limit=20, result=20
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.31 s -- in com.example.recommend.controller.HotItemsControllerTest
+[INFO] Running com.example.recommend.service.admin.MockAbExperimentServiceTest
+2026-10-04 01:40:33.907 [main] INFO  c.e.r.s.a.MockAbExperimentService [] - 更新实验: id=exp_004, configVersion=2
+2026-10-04 01:40:33.929 [main] INFO  c.e.r.s.a.MockAbExperimentService [] - 更新实验: id=exp_003, configVersion=3
+2026-10-04 01:40:33.946 [main] INFO  c.e.r.s.a.MockAbExperimentService [] - 创建实验: id=exp_4b498e2d, name=新测试实�?
+2026-10-04 01:40:33.960 [main] INFO  c.e.r.s.a.MockAbExperimentService [] - 暂停实验: id=exp_001, name=首页推荐模型对比实验
+2026-10-04 01:40:33.974 [main] INFO  c.e.r.s.a.MockAbExperimentService [] - 创建实验: id=exp_325d4ebb, name=待启动实�?
+2026-10-04 01:40:33.976 [main] INFO  c.e.r.s.a.MockAbExperimentService [] - 启动实验: id=exp_325d4ebb, name=待启动实�?
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 s -- in com.example.recommend.service.admin.MockAbExperimentServiceTest
+[INFO] Running com.example.recommend.service.admin.MockModelManagementServiceTest
+2026-10-04 01:40:34.030 [main] INFO  c.e.r.s.a.MockModelManagementService [] - �?活模�?: deepfm:v1
+2026-10-04 01:40:34.101 [main] INFO  c.e.r.s.a.MockModelManagementService [] - �?活模�?: deepfm:v1
+2026-10-04 01:40:34.104 [main] INFO  c.e.r.s.a.MockModelManagementService [] - 回滚模型: deepfm:v2（等价于�?活）
+2026-10-04 01:40:34.105 [main] INFO  c.e.r.s.a.MockModelManagementService [] - �?活模�?: deepfm:v2
+2026-10-04 01:40:34.144 [main] INFO  c.e.r.s.a.MockModelManagementService [] - �?活模�?: deepfm:v1
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.150 s -- in com.example.recommend.service.admin.MockModelManagementServiceTest
+[INFO] Running com.example.recommend.service.admin.MockSystemConfigServiceTest
+2026-10-04 01:40:34.181 [main] INFO  c.e.r.s.a.MockSystemConfigService [] - 更新配置: key=recommend.rank.default-page-size, value=30
+2026-10-04 01:40:34.192 [main] DEBUG c.e.r.s.a.MockSystemConfigService [] - 配置�? ab.experiment.default-exp-id 未映射到 RecommendProperties，仅更新 store
+2026-10-04 01:40:34.193 [main] INFO  c.e.r.s.a.MockSystemConfigService [] - 更新配置: key=ab.experiment.default-exp-id, value=exp_new
+2026-10-04 01:40:34.203 [main] INFO  c.e.r.s.a.MockSystemConfigService [] - 更新配置: key=recommend.cache.normal-ttl, value=45
+2026-10-04 01:40:34.239 [main] INFO  c.e.r.s.a.MockSystemConfigService [] - 更新配置: key=recommend.cache.normal-ttl, value=30
+2026-10-04 01:40:34.250 [main] INFO  c.e.r.s.a.MockSystemConfigService [] - 更新配置: key=recommend.cache.high-frequency-ttl, value=5
+2026-10-04 01:40:34.271 [main] INFO  c.e.r.s.a.MockSystemConfigService [] - 更新配置: key=recommend.model-inference.deepfm-timeout-ms, value=100
+2026-10-04 01:40:34.301 [main] WARN  c.e.r.s.a.MockSystemConfigService [] - 配置热更新失败，值格式不匹配: key=recommend.cache.normal-ttl, value=not_a_number, error=For input string: "not_a_number"
+2026-10-04 01:40:34.301 [main] INFO  c.e.r.s.a.MockSystemConfigService [] - 更新配置: key=recommend.cache.normal-ttl, value=not_a_number
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s -- in com.example.recommend.service.admin.MockSystemConfigServiceTest
+[INFO] Running com.example.recommend.service.behavior.MockBehaviorCollectorServiceTest
+2026-10-04 01:40:34.484 [main] INFO  c.e.r.s.b.MockBehaviorCollectorService [] - 行为事件已采�?(模拟写入Kafka): eventId=c5517686, userId=user1, itemId=item1, actionType=click, scene=home
+2026-10-04 01:40:34.493 [main] INFO  c.e.r.s.b.MockBehaviorCollectorService [] - 行为事件已采�?(模拟写入Kafka): eventId=c5517686, userId=user1, itemId=item1, actionType=click, scene=home
+2026-10-04 01:40:34.500 [main] INFO  c.e.r.s.b.MockBehaviorCollectorService [] - 行为事件已采�?(模拟写入Kafka): eventId=f258a568, userId=ab, itemId=c, actionType=click, scene=home
+2026-10-04 01:40:34.506 [main] INFO  c.e.r.s.b.MockBehaviorCollectorService [] - 行为事件已采�?(模拟写入Kafka): eventId=97a8f349, userId=a, itemId=bc, actionType=click, scene=home
+2026-10-04 01:40:34.523 [main] INFO  c.e.r.s.b.MockBehaviorCollectorService [] - 行为事件已采�?(模拟写入Kafka): eventId=3ab5d662, userId=user1, itemId=item1, actionType=click, scene=home
+2026-10-04 01:40:34.528 [main] INFO  c.e.r.s.b.MockBehaviorCollectorService [] - 行为事件已采�?(模拟写入Kafka): eventId=c5517686, userId=user1, itemId=item1, actionType=click, scene=home
+2026-10-04 01:40:34.529 [main] INFO  c.e.r.s.b.MockBehaviorCollectorService [] - 行为事件已采�?(模拟写入Kafka): eventId=d6f5a907, userId=user1, itemId=item1, actionType=view, scene=home
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 s -- in com.example.recommend.service.behavior.MockBehaviorCollectorServiceTest
+[INFO] Running com.example.recommend.service.cache.RecommendCacheServiceTest
+2026-10-04 01:40:34.630 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=rec:result:home:user1:control:deepfm_v1, ttl=120s(实际129s), userId=user1
+2026-10-04 01:40:34.631 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=rec:result:home:user10:control:deepfm_v1, ttl=120s(实际127s), userId=user10
+2026-10-04 01:40:34.632 [main] INFO  c.e.r.s.cache.RecommendCacheService [] - 按精�? Key 失效缓存: key=rec:result:home:user1:control:deepfm_v1, removed=true
+2026-10-04 01:40:34.637 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存命中: key=rec:result:home:user10:control:deepfm_v1
+2026-10-04 01:40:34.643 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=rec:result:home:user1:control:v1, ttl=120s(实际128s), userId=user1
+2026-10-04 01:40:34.644 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=rec:result:home:user2:control:v1, ttl=120s(实际129s), userId=user2
+2026-10-04 01:40:34.644 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=other:key, ttl=120s(实际129s), userId=user3
+2026-10-04 01:40:34.645 [main] INFO  c.e.r.s.cache.RecommendCacheService [] - 按前�?批量失效缓存: prefix=rec:result:home, count=2
+2026-10-04 01:40:34.645 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存命中: key=other:key
+2026-10-04 01:40:34.650 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=rec:result:home:user1:control:deepfm_v1, ttl=120s(实际111s), userId=user1
+2026-10-04 01:40:34.651 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=rec:result:home:user2:control:deepfm_v1, ttl=120s(实际120s), userId=user2
+2026-10-04 01:40:34.652 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存命中: key=rec:result:home:user1:control:deepfm_v1
+2026-10-04 01:40:34.652 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存命中: key=rec:result:home:user2:control:deepfm_v1
+2026-10-04 01:40:34.652 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 按用户失效缓�?: userId=user1, invalidatedCount=1
+2026-10-04 01:40:34.652 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存命中: key=rec:result:home:user2:control:deepfm_v1
+2026-10-04 01:40:34.655 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=test:key, ttl=120s(实际112s), userId=user1
+2026-10-04 01:40:34.655 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存命中: key=test:key
+2026-10-04 01:40:34.659 [main] INFO  c.e.r.s.cache.RecommendCacheService [] - 按精�? Key 失效缓存: key=nonexistent:key, removed=false
+2026-10-04 01:40:34.662 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存写入: key=rec:result:home:user1:control:deepfm_v1, ttl=120s(实际111s), userId=user1
+2026-10-04 01:40:34.662 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存命中: key=rec:result:home:user1:control:deepfm_v1
+2026-10-04 01:40:34.662 [main] DEBUG c.e.r.s.cache.RecommendCacheService [] - 缓存命中: key=rec:result:home:user1:control:deepfm_v1
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s -- in com.example.recommend.service.cache.RecommendCacheServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 52, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  52.188 s
+[INFO] Finished at: 2026-10-04T01:40:36+08:00
+[INFO] ------------------------------------------------------------------------
